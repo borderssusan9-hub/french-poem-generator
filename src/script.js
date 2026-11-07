@@ -15,6 +15,10 @@ let context = "You are a romantic French poem expert and love to write short poe
 let prompt = `User instructions: Generate a French poem about ${instructionsInputElement.value}`;
 let apiURL = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
 
+let poemOutputElement = document.querySelector("#poem-output");
+poemOutputElement.classList.remove("hidden");
+poemOutputElement.innerHTML = `<div class="generating">⏳Generating your French poem about ${instructionsInputElement.value}... with an English translation in parentheses.</div>`;
+
 console.log("Generating poem...");
 console.log(`Prompt: ${prompt}`);
 console.log(`Context: ${context}`);
